@@ -97,17 +97,6 @@ class Category(CategoryBase):
         orm_mode = True
 
 
-class EventLanguageBase(BaseModel):
-    event_id: int
-    language_id:int
-
-class EventLanguageCreate(EventLanguageBase):
-    pass
-
-class EventLanguage(EventLanguageBase):
-    id: int
-    class Config:
-        orm_mode = True
 
 
 class LanguageBase(BaseModel):
@@ -120,6 +109,35 @@ class Language(LanguageBase):
     id: int
     class Config:
         orm_mode = True
+
+class EventLanguageBase(BaseModel):
+    event_id: int
+    language_id:int
+
+class EventLanguageCreate(EventLanguageBase):
+    pass
+
+class EventLanguage(EventLanguageBase):
+    id: int
+    lang: Language
+    class Config:
+        orm_mode = True
+
+class CommentBase(BaseModel):
+    star_given: float
+    event_comment: str
+    event_id: int
+    user_id: int
+
+class CommentCreate(CommentBase):
+    pass
+
+class Comment(CommentBase):
+    id: int
+    user: User
+    class Config:
+        orm_mode = True
+
 
 
 
@@ -147,6 +165,7 @@ class Event(EventBase):
     location: List[Coordinate] = []
     dates : List[EventDate] = []
     langevent: List[EventLanguage] = []
+    event_comment: List[Comment] = []
 
     class Config:
         orm_mode = True

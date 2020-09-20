@@ -56,6 +56,10 @@ def create_language(eventlang:schemas.EventLanguageCreate, db: Session = Depends
 @app.post('/event_date_add/', response_model=schemas.EventDate)
 def create_event_date(event_date:schemas.EventDateCreate, db: Session = Depends(get_db)):
     return crud.add_date_to_event(db=db,event_date=event_date)
+    
+@app.post('/comment_add/', response_model=schemas.Comment)
+def create_comment(comment:schemas.CommentCreate, db: Session = Depends(get_db)):
+    return crud.create_comment(db=db,comment=comment)
 
 @app.get("/events/{event_id}", response_model=schemas.Event)
 def read_user(event_id: int, db: Session = Depends(get_db)):
