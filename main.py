@@ -61,6 +61,14 @@ def create_event_date(event_date:schemas.EventDateCreate, db: Session = Depends(
 def create_comment(comment:schemas.CommentCreate, db: Session = Depends(get_db)):
     return crud.create_comment(db=db,comment=comment)
 
+@app.post('/event_image_add/', response_model=schemas.EventImage)
+def create_event_image(event_image:schemas.EventImageCreate, db: Session = Depends(get_db)):
+    return crud.add_event_image(db=db,event_image=event_image)
+
+@app.post('/participate/', response_model=schemas.Participant)
+def participate(participant:schemas.ParticipantCreate, db: Session = Depends(get_db)):
+    return crud.participate(db=db,participant=participant)
+
 @app.get("/events/{event_id}", response_model=schemas.Event)
 def read_user(event_id: int, db: Session = Depends(get_db)):
     db_user = crud.get_event_by_id(db, event=event_id)

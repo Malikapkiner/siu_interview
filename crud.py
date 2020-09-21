@@ -88,6 +88,22 @@ def add_date_to_event(db: Session, event_date: schemas.EventDateCreate):
     db.refresh(db_event_date)
     return db_event_date
 
+#Add images for event.
+def add_event_image(db: Session, event_image: schemas.EventImageCreate):
+    db_event_image= models.EventImage(image_path=event_image.image_path, event_id=event_image.event_id)
+    db.add(db_event_image)
+    db.commit()
+    db.refresh(db_event_image)
+    return db_event_image
+
+#Add participant to event
+def participate(db: Session, participant: schemas.ParticipantCreate):
+    db_participant = models.Participant(user_id=participant.user_id, event_date_id=participant.event_date_id)
+    db.add(db_participant)
+    db.commit()
+    db.refresh(db_participant)
+    return db_participant
+
 #Get functions
 
 def get_event_by_id(db:Session, event: int):

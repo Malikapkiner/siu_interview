@@ -30,6 +30,7 @@ class User(Base):
     city_user = relationship("City", back_populates="user_city")
     user_event = relationship("Event", back_populates='event_user')
     user_comment = relationship('Comment', back_populates='user')
+    user_participant = relationship('Participant', back_populates='participant_user')
 
 #District class for district table.
 class District(Base):
@@ -65,6 +66,7 @@ class Event(Base):
     dates = relationship("EventDate", back_populates="evnt")
     event_user = relationship('User', back_populates='user_event')
     event_comment=relationship('Comment', back_populates='comment_for_event')
+    event_image = relationship('EventImage', back_populates='image_event')
 
 #Category class for event categories.
 class Category(Base):
@@ -94,6 +96,8 @@ class EventDate(Base):
 
     #Relations
     evnt= relationship('Event',back_populates='dates')
+    participants = relationship('Participant', back_populates='participant_event')
+
 
 #Language class for events language
 class Language(Base):
@@ -126,3 +130,22 @@ class Comment(Base):
     #Relations
     comment_for_event = relationship('Event', back_populates='event_comment')
     user= relationship('User', back_populates='user_comment')
+
+#Images for Events one-to many relationship
+class EventImage(Base):
+    __tablename__='eventImages'
+    id = Column(Integer, primary_key=True, index=True)
+    image_path= Column(String)
+    event_id= Column(Integer, ForeignKey('events.id'))
+
+    #Relations
+    image_event = relationship('Event', back_populates='event_image')
+
+class Participant(Base):
+    __tablename__='participants'
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    event_date_id = Column(Integer, ForeignKey("eventDates.id"))
+
+    participant_event= relationship('EventDate', back_populates='participants')
+    participant_user = relationship('User', back_populates='user_participant')

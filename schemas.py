@@ -2,6 +2,20 @@ from typing import List, Optional
 import datetime
 from pydantic import BaseModel
 
+class CityBase(BaseModel):
+    city_name: str
+
+
+class CityCreate(CityBase):
+    pass
+
+
+class City(CityBase):
+    id: int
+
+
+    class Config:
+        orm_mode = True
 
 class DistrictBase(BaseModel):
     district_name: str
@@ -13,25 +27,12 @@ class DistrictCreate(DistrictBase):
 class District(DistrictBase):
     id: int
     city_id: int
+    city: City
 
     class Config:
         orm_mode = True
 
-class CityBase(BaseModel):
-    city_name: str
 
-
-class CityCreate(CityBase):
-    pass
-
-
-class City(CityBase):
-    id: int
-    #user_city = List[District]= []
-    #district = List[District]= []
-
-    class Config:
-        orm_mode = True
 
 
 class UserBase(BaseModel):
@@ -53,6 +54,20 @@ class User(UserBase):
     class Config:
         orm_mode = True
 
+class ParticipantBase(BaseModel):
+    event_date_id: int
+    user_id: int
+
+class ParticipantCreate(ParticipantBase):
+    pass
+
+class Participant(ParticipantBase):
+    id: int
+    participant_user: User
+
+    class Config:
+        orm_mode = True
+
 class EventDateBase(BaseModel):
     date_of_event: datetime.datetime
     event_id: int
@@ -63,6 +78,7 @@ class EventDateCreate(EventDateBase):
 
 class EventDate(EventDateBase):
     id: int
+    participants: List[Participant] = []
 
     class Config:
         orm_mode = True
@@ -78,6 +94,23 @@ class CoordinateCreate(CoordinateBase):
     pass
 
 class Coordinate(CoordinateBase):
+    id: int
+
+    class Config:
+        orm_mode = True
+
+
+
+
+class EventImageBase(BaseModel):
+    image_path : str
+    event_id: int
+
+
+class EventImageCreate(EventImageBase):
+    pass
+
+class EventImage(EventImageBase):
     id: int
 
     class Config:
@@ -161,11 +194,13 @@ class EventCreate(EventBase):
 
 class Event(EventBase):
     id: int
+    event_image: List[EventImage] = []
     event_user: User
     location: List[Coordinate] = []
     dates : List[EventDate] = []
-    langevent: List[EventLanguage] = []
+    lang_event: List[EventLanguage] = []
     event_comment: List[Comment] = []
+
 
     class Config:
         orm_mode = True
