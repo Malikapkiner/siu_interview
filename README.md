@@ -1,14 +1,14 @@
-## Siu Interview Task
+# Siu Interview Task
 
 Bu repo Siu için hazırlanmıştır.
 
-# Veritabanı şeması
-![Veritabanı](/images/Scehma.png)
+## Veritabanı şeması
+![Veritabanı](/images/Schema.PNG)
 
-# Çıktılar
+## Çıktılar
 Yapılması istenen API çıktısı repodaki response_JSON.txt isimli dosyadadır.
 
-# Dosya yapısı.
+## Dosya yapısı.
 crud.py dosyasında veritabanı için geçici create sorguları yazılmıştır.
 
 database.py veritabanı bağlantısını sağlamaktadır.
