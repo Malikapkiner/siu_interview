@@ -16,3 +16,5 @@ database.py veritabanı bağlantısını sağlamaktadır.
 models.py model classlarını barındıran entity dosyasıdır.
 
 schemas.py request ve response yapılarını konntrol etmek ve düzenlenmek için oluşturulan dosyadır.
+
+main.py http requestlerin ve responseların handle edildiği dosyadır.
