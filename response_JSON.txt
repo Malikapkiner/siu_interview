@@ -1,0 +1,212 @@
+{
+    "title": "FotoÇekim",
+    "description": "Bu gün foto çekileceğiz",
+    "duration": 2,
+    "stuffs": "Eldiven",
+    "important_info": "Katılım Zorunludur",
+    "price": 25.5,
+    "user_id": 1,
+    "district_id": 2,
+    "category_id": 2,
+    "event_district": {
+        "district_name": "Çankaya",
+        "id": 2,
+        "city_id": 1,
+        "city": {
+            "city_name": "Ankara",
+            "id": 1
+        }
+    },
+    "event_category": {
+        "category_name": "Foto",
+        "id": 2
+    },
+    "id": 1,
+    "event_image": [
+        {
+            "image_path": "/home/mali/event1.jpg",
+            "event_id": 1,
+            "id": 1
+        },
+        {
+            "image_path": "/home/mali/event2.jpg",
+            "event_id": 1,
+            "id": 2
+        },
+        {
+            "image_path": "/home/mali/event3.jpg",
+            "event_id": 1,
+            "id": 3
+        }
+    ],
+    "event_user": {
+        "user_name": "Mali1",
+        "star": 0.0,
+        "about": "Merhaba ben Mali",
+        "city_id": 1,
+        "id": 1,
+        "city_user": {
+            "city_name": "Ankara",
+            "id": 1
+        }
+    },
+    "location": [
+        {
+            "latitude": 133.2,
+            "longitude": 22.44,
+            "event_id": 1,
+            "id": 1
+        }
+    ],
+    "dates": [
+        {
+            "date_of_event": "2020-09-21T12:23:19.570000",
+            "event_id": 1,
+            "id": 1,
+            "participants": [
+                {
+                    "event_date_id": 1,
+                    "user_id": 1,
+                    "id": 1,
+                    "participant_user": {
+                        "user_name": "Mali1",
+                        "star": 0.0,
+                        "about": "Merhaba ben Mali",
+                        "city_id": 1,
+                        "id": 1,
+                        "city_user": {
+                            "city_name": "Ankara",
+                            "id": 1
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "date_of_event": "2020-09-22T12:23:19.570000",
+            "event_id": 1,
+            "id": 2,
+            "participants": [
+                {
+                    "event_date_id": 2,
+                    "user_id": 1,
+                    "id": 2,
+                    "participant_user": {
+                        "user_name": "Mali1",
+                        "star": 0.0,
+                        "about": "Merhaba ben Mali",
+                        "city_id": 1,
+                        "id": 1,
+                        "city_user": {
+                            "city_name": "Ankara",
+                            "id": 1
+                        }
+                    }
+                },
+                {
+                    "event_date_id": 2,
+                    "user_id": 2,
+                    "id": 3,
+                    "participant_user": {
+                        "user_name": "Ajmet",
+                        "star": 0.0,
+                        "about": "Merhaba ben Ahmet",
+                        "city_id": 2,
+                        "id": 2,
+                        "city_user": {
+                            "city_name": "İstanbul",
+                            "id": 2
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "date_of_event": "2020-09-22T12:23:19.570000",
+            "event_id": 1,
+            "id": 3,
+            "participants": [
+                {
+                    "event_date_id": 3,
+                    "user_id": 2,
+                    "id": 5,
+                    "participant_user": {
+                        "user_name": "Ajmet",
+                        "star": 0.0,
+                        "about": "Merhaba ben Ahmet",
+                        "city_id": 2,
+                        "id": 2,
+                        "city_user": {
+                            "city_name": "İstanbul",
+                            "id": 2
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "date_of_event": "2020-09-23T12:23:19.570000",
+            "event_id": 1,
+            "id": 4,
+            "participants": []
+        }
+    ],
+    "lang_event": [
+        {
+            "event_id": 1,
+            "language_id": 1,
+            "id": 1,
+            "lang": {
+                "lang": "Türkçe",
+                "id": 1
+            }
+        },
+        {
+            "event_id": 1,
+            "language_id": 2,
+            "id": 2,
+            "lang": {
+                "lang": "Almanca",
+                "id": 2
+            }
+        }
+    ],
+    "event_comment": [
+        {
+            "star_given": 3.2,
+            "event_comment": "Başarılı bir etkinlik katılın.",
+            "event_id": 1,
+            "user_id": 1,
+            "id": 1,
+            "user": {
+                "user_name": "Mali1",
+                "star": 0.0,
+                "about": "Merhaba ben Mali",
+                "city_id": 1,
+                "id": 1,
+                "city_user": {
+                    "city_name": "Ankara",
+                    "id": 1
+                }
+            }
+        },
+        {
+            "star_given": 1.2,
+            "event_comment": "Kötü.",
+            "event_id": 1,
+            "user_id": 1,
+            "id": 2,
+            "user": {
+                "user_name": "Mali1",
+                "star": 0.0,
+                "about": "Merhaba ben Mali",
+                "city_id": 1,
+                "id": 1,
+                "city_user": {
+                    "city_name": "Ankara",
+                    "id": 1
+                }
+            }
+        }
+    ]
+}
